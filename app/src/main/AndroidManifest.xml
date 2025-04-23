@@ -19,6 +19,24 @@
         android:theme="@style/Theme.FINAL_EXAM"
         tools:targetApi="31">
         <activity
+            android:name=".MediaPlayer_controller"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Radio_btn"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".List_View"
             android:exported="true">
             <intent-filter>
