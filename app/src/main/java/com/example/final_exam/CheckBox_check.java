@@ -1,6 +1,7 @@
 package com.example.final_exam;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -27,8 +28,12 @@ public class CheckBox_check extends AppCompatActivity {
         result = findViewById(R.id.result);
         b1 = findViewById(R.id.b1);
 
-        b1.setOnClickListener(v->{
-            Selected();
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Selected();
+            }
         });
 
     }

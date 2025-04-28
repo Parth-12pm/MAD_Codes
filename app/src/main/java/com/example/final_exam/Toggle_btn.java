@@ -2,6 +2,7 @@ package com.example.final_exam;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -25,11 +26,14 @@ public class Toggle_btn extends AppCompatActivity {
         t1= findViewById(R.id.t1);
         result = findViewById(R.id.result);
 
-        t1.setOnClickListener(v->{
-            if(t1.isChecked()){
-                result.setText("Toggle Status : On");
-            }else {
-                result.setText("Toggle Status : Off");
+        t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (t1.isChecked()) {
+                    result.setText("Toggle Status : On");
+                } else {
+                    result.setText("Toggle Status : Off");
+                }
             }
         });
 

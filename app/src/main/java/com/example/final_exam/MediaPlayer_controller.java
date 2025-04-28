@@ -3,6 +3,7 @@ package com.example.final_exam;
 import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -39,20 +40,31 @@ public class MediaPlayer_controller extends AppCompatActivity {
         v1.start();
 
 
-        b1.setOnClickListener(v -> {
-            M1.start();
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                M1.start();
+            }
         });
 
-        b2.setOnClickListener(v -> {
-            M1.pause();
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                M1.pause();
+            }
         });
 
-        b3.setOnClickListener(v -> {
-            try {
-                M1.stop();
-                M1.prepare();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    M1.stop();
+                    M1.prepare();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 

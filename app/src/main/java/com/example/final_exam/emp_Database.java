@@ -3,6 +3,7 @@ package com.example.final_exam;
 import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,36 +35,49 @@ public class emp_Database extends AppCompatActivity {
 
         db = new dbHelper_emp(this);
 
-        b1.setOnClickListener(v -> {
-            db.insert(getID(), getName(), getDept());
-            toast("Inserted");
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.insert(getID(), getName(), getDept());
+                toast("Inserted");
+            }
         });
 
-        b2.setOnClickListener(v -> {
-            db.update(getID(), getName(), getDept());
-            toast("Updated");
-        });
-
-        b3.setOnClickListener(v -> {
-            Cursor c = db.display(getID());
-            if (c.moveToFirst()) {
-                e2.setText(c.getString(1));
-                e3.setText(c.getString(2));
-
-                String result = "Emp id :" + getID() + "\n" +
-                        "Emp Name :" + c.getString(1) +"\n"+
-                        "Emp dept :" + c.getString(2);
-                t1.setText(result);
-
-            } else {
-                toast("not found");
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.update(getID(), getName(), getDept());
+                toast("Updated");
             }
         });
 
 
-        b4.setOnClickListener(v -> {
-            db.delete(getID());
-            toast("deleted");
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor c = db.display(getID());
+                if (c.moveToFirst()) {
+                    e2.setText(c.getString(1));
+                    e3.setText(c.getString(2));
+
+                    String result = "Emp id :" + getID() + "\n" +
+                            "Emp Name :" + c.getString(1) + "\n" +
+                            "Emp dept :" + c.getString(2);
+                    t1.setText(result);
+
+                } else {
+                    toast("not found");
+                }
+            }
+        });
+
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.delete(getID());
+                toast("deleted");
+            }
         });
     }
 

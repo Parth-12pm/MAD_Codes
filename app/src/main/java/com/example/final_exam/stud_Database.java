@@ -3,6 +3,7 @@ package com.example.final_exam;
 import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,27 +29,40 @@ public class stud_Database extends AppCompatActivity {
         deleteBtn = findViewById(R.id.delete);
         db = new dbHelper_stud(this);
 
-        insertBtn.setOnClickListener(v -> {
-            db.insertStudent(getRoll(), getName(), getMarks());
-            toast("Inserted");
+
+        insertBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.insertStudent(getRoll(), getName(), getMarks());
+                toast("Inserted");
+            }
         });
 
-        getBtn.setOnClickListener(v -> {
-            Cursor c = db.getStudent(getRoll());
-            if (c.moveToFirst()) {
-                nameET.setText(c.getString(1));
-                marksET.setText(c.getString(2));
-            } else toast("Not Found");
+        getBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor c = db.getStudent(getRoll());
+                if (c.moveToFirst()) {
+                    nameET.setText(c.getString(1));
+                    marksET.setText(c.getString(2));
+                } else toast("Not Found");
+            }
         });
 
-        updateBtn.setOnClickListener(v -> {
-            db.updateStudent(getRoll(), getName(), getMarks());
-            toast("Updated");
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.updateStudent(getRoll(), getName(), getMarks());
+                toast("Updated");
+            }
         });
 
-        deleteBtn.setOnClickListener(v -> {
-            db.deleteStudent(getRoll());
-            toast("Deleted");
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.deleteStudent(getRoll());
+                toast("Deleted");
+            }
         });
     }
 

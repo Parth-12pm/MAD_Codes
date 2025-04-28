@@ -26,13 +26,17 @@ public class Radio_btn extends AppCompatActivity {
         r2 = findViewById(R.id.r2);
         result = findViewById(R.id.result);
 
-        rgrp.setOnCheckedChangeListener((group, checkedId) -> {
-            int ischecked = rgrp.getCheckedRadioButtonId();
 
-            if (ischecked == R.id.r1)
-                result.setText("selected Male ");
-            if (ischecked == R.id.r2)
-                result.setText("selected Female");
+        rgrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int ischecked = rgrp.getCheckedRadioButtonId();
+
+                if (ischecked == R.id.r1)
+                    result.setText("selected Male ");
+                if (ischecked == R.id.r2)
+                    result.setText("selected Female");
+            }
         });
 
     }

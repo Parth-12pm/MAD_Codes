@@ -2,16 +2,13 @@ package com.example.final_exam;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class List_View extends AppCompatActivity {
     ListView l1;
@@ -32,10 +29,14 @@ public class List_View extends AppCompatActivity {
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.text,R.id.txt1,cities);
         l1.setAdapter(arrayAdapter);
 
-        l1.setOnItemClickListener(((parent, view, position, id) -> {
-            String selected = cities[position];
-            Toast.makeText(this,"Selected : "+selected,Toast.LENGTH_SHORT).show();
-        }));
+
+        l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selected = cities[position];
+                Toast.makeText(parent.getContext(), "Selected : " + selected, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }
