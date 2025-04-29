@@ -1,6 +1,7 @@
 package com.example.final_exam;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Send_email extends AppCompatActivity {
     EditText e1, e2, e3;
     Button b1;
+    EmailReceiver em;
+    IntentFilter IF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,8 @@ public class Send_email extends AppCompatActivity {
         e3 = findViewById(R.id.e3);
         b1 = findViewById(R.id.b1);
 
+        em = new EmailReceiver();
+        IF = new IntentFilter("andriod.intent.action.VIEW");
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,5 +44,17 @@ public class Send_email extends AppCompatActivity {
                 startActivity(Intent.createChooser(in, "choose"));
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(em, IF);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(em);
     }
 }
