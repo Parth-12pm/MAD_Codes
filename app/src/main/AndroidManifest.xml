@@ -26,6 +26,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FINAL_EXAM"
         tools:targetApi="31">
+        <service
+            android:name=".Service_LifeCycle"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".Animations"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Animations"
             android:exported="true">
@@ -313,15 +327,6 @@
         </activity>
         <activity
             android:name=".stud_Database"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Animations"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
