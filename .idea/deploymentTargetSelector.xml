@@ -5,27 +5,27 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="BlueTooth_26">
+      <SelectionState runConfigName="Sensor_List">
         <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="Ten_btn_Table">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="Grid_View">
-        <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-29T18:30:14.442754700Z">
+        <DropdownSelection timestamp="2025-04-29T15:49:16.664156100Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=47031247" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\parth\.android\avd\Medium_Phone_API_25.avd" />
             </handle>
           </Target>
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="Stud_FeedBack">
+      <SelectionState runConfigName="Send_sms">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Animations">
+      <SelectionState runConfigName="Send_email">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="BlueTooth_26">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="Ten_btn_Table">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
