@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.IBinder;
 
 public class Service_LifeCycle extends Service {
+
+    //git is shit
     public Service_LifeCycle() {
     }
 
