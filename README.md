@@ -1,5 +1,7 @@
 # MAD_Codes
 
+<3 s 
+
 ## Overview
 This repository contains Mobile Application Development (MAD) code examples and projects. It serves as a collection of practical implementations for various mobile development concepts using Android.
 
